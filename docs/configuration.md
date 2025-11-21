@@ -1,3 +1,8 @@
+---
+layout: default
+title: Configuration
+---
+
 # Klipper Configuration
 
 To control the Box Turtle from your printer, you need to add it as a secondary MCU in Klipper.

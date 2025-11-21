@@ -1,3 +1,8 @@
+---
+layout: default
+title: User Manual
+---
+
 # User Manual
 
 ## Loading Filament

@@ -63,22 +63,22 @@ def main():
                 out_path = os.path.join(DOCS_IMG_DIR, out_name)
                 render_scad(source_path, out_path)
 
-    # 2. Render specific STLs (e.g., Base Build)
-    # We don't want to render every single STL, just key ones for docs
-    target_stls = [
-        "STLs/Base_Build/TurtleNeck/TurtleNeck_Main_Body.stl",
-        "STLs/Base_Build/Extruder/Main_Body_NEMA14.stl" 
-    ]
-    
-    # Walk to find them if paths aren't exact, or just use known paths
-    # For this demo, let's just scan STLs/Base_Build
+    # 2. Render STLs in STLs/Base_Build
+    # We want to render all parts in Base_Build to provide a comprehensive guide
     base_build_dir = os.path.join(STL_DIR, "Base_Build")
     if os.path.exists(base_build_dir):
         for root, dirs, files in os.walk(base_build_dir):
             for file in files:
-                if file.endswith(".stl") and "Main_Body" in file: # Filter for interesting parts
+                if file.endswith(".stl") and not file.startswith("."):
                     source_path = os.path.join(root, file)
-                    out_name = f"STL_{file.replace('.stl', '.png')}"
+                    # Create a descriptive name: Extruder_motor_plate.png
+                    # Use the parent folder name as a prefix if it's not Base_Build
+                    parent_dir = os.path.basename(root)
+                    if parent_dir == "Base_Build":
+                        out_name = f"STL_{file.replace('.stl', '.png')}"
+                    else:
+                        out_name = f"STL_{parent_dir}_{file.replace('.stl', '.png')}"
+                    
                     out_path = os.path.join(DOCS_IMG_DIR, out_name)
                     render_stl(source_path, out_path)
 

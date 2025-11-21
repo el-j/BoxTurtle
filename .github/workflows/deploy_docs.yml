@@ -35,6 +35,9 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
       
+      - name: Generate Navigation
+        run: python3 scripts/generate_nav.py
+
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:

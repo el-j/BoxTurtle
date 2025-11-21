@@ -1,3 +1,8 @@
+---
+layout: default
+title: Home
+---
+
 # Welcome to Box Turtle Feeder
 
 **The Open Source, 4-Lane Filament Changer for Klipper.**

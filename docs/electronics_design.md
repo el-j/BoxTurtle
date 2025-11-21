@@ -1,3 +1,8 @@
+---
+layout: default
+title: Electronics Design
+---
+
 # Box Turtle 4-Lane Feeder Electronics Design
 
 This guide details the electronics hardware required to build a 4-lane filament feeder and cutter system for the Box Turtle project. While I cannot generate a binary Fritzing (`.fzz`) file, this document provides the complete Bill of Materials (BOM), wiring specifications, and configuration details needed to build the circuit.

@@ -1,4 +1,9 @@
-# Credits & Acknowledgements
+---
+layout: default
+title: Credits
+---
+
+# Credits & Acknowledgments
 
 The Box Turtle project is a community effort.
 

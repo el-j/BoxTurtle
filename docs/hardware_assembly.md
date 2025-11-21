@@ -1,65 +1,72 @@
+---
+layout: default
+title: Hardware Assembly
+---
+
 # Hardware Assembly Guide
 
-## Part 1: 3D Printing
+This guide covers the assembly of the Box Turtle feeder system.
 
-### Required Parts
-Navigate to the `STLs/Base_Build` directory in the repository. You will need to print:
+## Phase 1: Printed Parts Preparation
 
-*   **4x Extruder Bodies**: `Extruder/` (Choose the version for NEMA 14).
-*   **4x Idler Assemblies**: `Idlers/`.
-*   **1x TurtleNeck**: `TurtleNeck/` (The input buffer).
-*   **1x Shield Mount**: Generate this from `CAD/Shield_Mount.scad` using OpenSCAD.
+Before starting assembly, ensure you have all the required printed parts.
 
-**Print Settings:**
-*   Material: ABS or ASA (Recommended), PETG (Acceptable).
-*   Infill: 40% Grid/Cubic.
-*   Walls: 4 perimeters.
+### 1. Extruder Modules (x4)
+Each of the 4 lanes requires an extruder module.
+*   **Motor Plate**: Mounts the NEMA 14 motor.
+    ![Motor Plate](images/STL_Extruder_motor_plate_x4.png)
+*   **Housing**: Main body of the extruder.
+    ![Housing](images/STL_Extruder_extruder_housing_x4.png)
+*   **Guidler**: The idler arm for the filament gear.
+    ![Guidler](images/STL_Extruder_[a]_guidler_x4.png)
 
----
+### 2. TurtleNeck (Buffer)
+The input buffer system.
+*   **Frame**: The main structural element.
+    ![Frame](images/STL_TurtleNeck_frame.png)
+*   **Lid**: Covers the buffer mechanism.
+    ![Lid](images/STL_TurtleNeck_lid.png)
+*   **Slide**: The moving shuttle.
+    ![Slide](images/STL_TurtleNeck_[a]_slide.png)
 
-## Part 2: Electronics (Pico Shield v2)
-
-We use a custom "Shield" to connect the Raspberry Pi Pico to the motors and sensors.
-
-### Bill of Materials (BOM)
-*   **1x** Raspberry Pi Pico (or Pico W for Extended).
-*   **4x** Stepper Drivers (TMC2209 or A4988).
-*   **4x** 100µF Electrolytic Capacitors (Critical!).
-*   **1x** Buck Converter (24V -> 5V).
-*   **Connectors**: JST-XH (4-pin for motors, 3-pin for sensors).
-
-*(See full BOM in `BT_Wiring/BOM_Shopping_List.md`)*
-
-### Assembly Steps
-
-1.  **PCB Fabrication**:
-    *   Use the Fritzing file `BT_Wiring/BoxTurtle_Shield_Basic.fz` (or `Extended.fz`) to export Gerbers and order a PCB, OR use a 100x80mm prototype board.
-    
-    > ![Placeholder: Image of bare PCB or Prototype Board layout]
-
-2.  **Soldering**:
-    *   **Headers**: Solder female headers for the Pico and Stepper Drivers.
-    *   **Capacitors**: Solder the 100µF capacitors near the driver power pins. **Watch Polarity!** (Stripe is Negative).
-    *   **Power**: Solder the Screw Terminal for 24V input.
-    *   **Buck Converter**: Solder the 5V regulator.
-
-    > ![Placeholder: Image of soldered board with components labeled]
-
-3.  **Wiring**:
-    *   **Motors**: Connect NEMA 14 motors to the 4-pin headers (L1-L4).
-    *   **Sensors**: Connect Omron D2HW switches to the 3-pin headers (S1-S4).
-    *   **Servo**: Connect the Cutter Servo to the Servo header.
-
-    > ![Placeholder: Wiring Diagram from Fritzing]
+### 3. Electronics Mount
+*   **Shield Mount**: Custom mount for the PCB.
+    ![Shield Mount](images/CAD_Shield_Mount.png)
 
 ---
 
-## Part 3: Final Assembly
+## Phase 2: Extruder Assembly
 
-1.  Mount the PCB into the printed **Shield Mount**.
-    
-    ![Shield Mount Render](images/CAD_Shield_Mount.png)
+**Tools Required:**
+*   Hex Drivers (1.5mm, 2.0mm, 2.5mm)
+*   Superglue (for magnets)
 
-2.  Secure the mount to your printer frame (e.g., DIN rail or extrusion).
-3.  Connect the 24V Power Supply (Ensure printer is OFF!).
-4.  Connect the USB cable from the Pico to your Klipper Host (Raspberry Pi).
+**Steps:**
+1.  **Motor Installation**: Secure the NEMA 14 motor to the `Motor Plate` using 2x M3x6mm screws.
+2.  **Gear Assembly**: Install the BMG drive gears onto the motor shaft. Align the grub screw with the flat spot.
+3.  **Housing Merge**: Attach the `Housing` to the `Motor Plate`.
+4.  **Idler Tension**: Insert the `Guidler` into the housing and secure with the M3 screw and spring.
+
+---
+
+## Phase 3: TurtleNeck Assembly
+
+1.  **Insert Magnets**: Press fit the 6x3mm magnets into the `Slide` and `Frame`. **Check Polarity!** They must repel the slide to the "home" position.
+2.  **Sensor Install**: Snap the Omron D2HW switch into the `Frame` sensor slot.
+3.  **Close Up**: Place the `Lid` over the assembly and secure with M3 screws.
+
+---
+
+## Phase 4: Electronics & Wiring
+
+### PCB Setup
+1.  **Solder Components**: Follow the [Electronics Design Guide](electronics_design.md) and [Bill of Materials](bom.md) to populate your Shield v2.
+2.  **Mounting**: Screw the PCB into the `Shield Mount` printed part.
+
+### Wiring Harness
+*   **Motors**: Connect the 4 extruders to ports L1, L2, L3, L4.
+*   **Sensors**: Connect the TurtleNeck sensors to S1, S2, S3, S4.
+
+> **Note**: Ensure the Buck Converter is set to 5.1V *before* connecting the Pico!
+
+[Next: Firmware Setup](firmware_setup.md)

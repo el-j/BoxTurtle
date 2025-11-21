@@ -1,3 +1,8 @@
+---
+layout: default
+title: Firmware Setup
+---
+
 # Firmware Setup Guide
 
 The Box Turtle uses custom Rust firmware for high-performance control.
