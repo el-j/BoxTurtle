@@ -5,10 +5,15 @@ This guide details the electronics hardware required to build a 4-lane filament 
 ## 1. System Overview
 
 The system consists of:
-*   **4x Feeder Units**: Each lane has a stepper motor to push/pull filament.
+*   **4x Feeder Units** (`STLs/Base_Build/Extruder`): Each lane has a stepper motor to push/pull filament.
+*   **TurtleNeck Buffer** (`STLs/Base_Build/TurtleNeck`): Input guide and buffer system.
 *   **4x Filament Sensors**: To detect filament presence in each lane.
 *   **1x Cutter Mechanism**: A servo-actuated blade to cut filament before retraction.
 *   **Controller**: A microcontroller (MCU) running Klipper firmware to manage the motors and sensors.
+
+### Variants
+*   **Basic**: Uses a standard Raspberry Pi Pico. Focuses on reliable feeding via USB/UART control.
+*   **Extended**: Uses a Raspberry Pi Pico W. Adds WiFi/Bluetooth connectivity, an OLED display for status, and expansion ports for environmental sensors.
 
 ## 2. Bill of Materials (BOM)
 
@@ -17,8 +22,8 @@ The system consists of:
 | :--- | :--- | :--- |
 | **Microcontroller** | 1 | **Raspberry Pi Pico** (RP2040) or **BTT SKR Pico** (All-in-one solution). |
 | **Stepper Drivers** | 4 | **TMC2209** (Silent, UART control) or A4988 (Cheaper, noisier). |
-| **Stepper Motors** | 4 | **NEMA 14** or **NEMA 17** Stepper Motors (depending on your printed feeder design). |
-| **Filament Sensors** | 4 | **Microswitches** (e.g., KW10, Omron) or **Optical Sensors**. |
+| **Stepper Motors** | 4 | **NEMA 14** (Round/Pancake) - Check `STLs/Base_Build/Extruder` for specific depth. |
+| **Filament Sensors** | 4 | **Omron D2HW-C201H** (Sealed, Long Lever) - *Note: D2F is Legacy*. |
 | **Cutter Servo** | 1 | **MG996R** (High torque) or **MG90S** (Compact), depending on cutter resistance. |
 | **Power Supply** | 1 | **24V DC PSU** (Usually shared with the main printer). |
 | **Buck Converter** | 1 | **24V to 5V** (To power the Pico and Servo). |
@@ -69,6 +74,15 @@ If building a custom board with a Raspberry Pi Pico, use the following pin mappi
 | **Sensor 3** | GP18 | Input (Pull-up) |
 | **Sensor 4** | GP19 | Input (Pull-up) |
 | **Cutter Servo** | GP20 | PWM Output |
+
+### Expansion Ports (Shield v2)
+
+| Component | Pico Pin (GP) | Notes |
+| :--- | :--- | :--- |
+| **I2C SDA** | GP14 | Requires 4.7kΩ Pull-up |
+| **I2C SCL** | GP15 | Requires 4.7kΩ Pull-up |
+| **Aux 1** | GP21 | General Purpose I/O |
+| **Aux 2** | GP22 | General Purpose I/O |
 
 ---
 

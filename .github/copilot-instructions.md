@@ -5,12 +5,15 @@ This repository hosts 3D printing files, CAD designs, electronics specifications
 ## Project Structure & Architecture
 - **Nature**: Hardware modifications, CAD assets, and electronics design for the Box Turtle project.
 - **Key Directories**:
-  - `CAD/`: Engineering source files (STEP, Fusion 360) for parts like mounts and tools.
-  - `STLs/`: 3D printable mesh files, organized by component (Extruder, Skirts, etc.).
+  - `CAD/`: Engineering source files (STEP, Fusion 360).
+  - `STLs/`: 3D printable mesh files, organized into:
+    - `Base_Build/`: Core components (Extruder, TurtleNeck, Spooler) required for every build.
+    - `Option_Parts/`: Add-ons (Electronics mounts, Trays, Skirts).
+    - `Legacy/`: Deprecated designs (e.g., D2F Extruder).
   - `BT_Wiring/`: Wiring diagrams, Fritzing PCB designs (`.fz`), and BOMs.
 - **Key Files**:
   - `electronics_design.md`: Comprehensive guide for electronics, BOM, and Klipper pinouts.
-  - `BT_Wiring/BoxTurtle_Pico_Shield_v2.fz`: Fritzing project file for the custom PCB shield (Pico + 4x Drivers).
+  - `BT_Wiring/BoxTurtle_Pico_Shield_v2.fz`: Fritzing project file for the custom PCB shield.
   - `BT_Wiring/BOM_Shopping_List.md`: Specific BOM for the PCB shield components.
   - `feeder_control.xml`: PLCopen XML definition for the feeder control logic.
 

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.plcopen.org/xml/tc6_0200">
+  <fileHeader companyName="BoxTurtle" productName="PicoShield_v2" productVersion="2.0" creationDateTime="2025-11-21T14:00:00"/>
+  <contentHeader name="Hardware_Configuration" modificationDateTime="2025-11-21T14:00:00">
+    <coordinateInfo>
+      <fbd>
+        <scaling x="1" y="1"/>
+      </fbd>
+      <ld>
+        <scaling x="1" y="1"/>
+      </ld>
+      <sfc>
+        <scaling x="1" y="1"/>
+      </sfc>
+    </coordinateInfo>
+  </contentHeader>
+  <types>
+    <dataTypes/>
+    <pous/>
+  </types>
+  <instances>
+    <configurations>
+      <configuration name="BoxTurtle_Controller">
+        <resource name="RaspberryPi_Pico">
+          <!-- Global Variable Mapping for Shield v2 -->
+          <globalVars>
+            <!-- ========================================== -->
+            <!-- INPUTS (Sensors) - GP16 to GP19            -->
+            <!-- ========================================== -->
+            <variable name="bSensor_Lane1" address="%IX0.0">
+              <type><BOOL/></type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">Filament Presence Sensor Lane 1 (Omron D2HW-C201H) (Pin GP16)</xhtml>
+              </documentation>
+            </variable>
+            <variable name="bSensor_Lane2" address="%IX0.1">
+              <type><BOOL/></type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">Filament Presence Sensor Lane 2 (Omron D2HW-C201H) (Pin GP17)</xhtml>
+              </documentation>
+            </variable>
+            <variable name="bSensor_Lane3" address="%IX0.2">
+              <type><BOOL/></type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">Filament Presence Sensor Lane 3 (Omron D2HW-C201H) (Pin GP18)</xhtml>
+              </documentation>
+            </variable>
+            <variable name="bSensor_Lane4" address="%IX0.3">
+              <type><BOOL/></type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">Filament Presence Sensor Lane 4 (Omron D2HW-C201H) (Pin GP19)</xhtml>
+              </documentation>
+            </variable>
+
+            <!-- ========================================== -->
+            <!-- OUTPUTS (Motors) - Step/Dir                -->
+            <!-- ========================================== -->
+            <!-- Lane 1 -->
+            <variable name="bMotor_L1_Step" address="%QX0.0">
+              <type><BOOL/></type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">Lane 1 Stepper STEP (NEMA 14) (Pin GP2)</xhtml>
+              </documentation>
+            </variable>
+            <variable name="bMotor_L1_Dir" address="%QX0.1">
+              <type><BOOL/></type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">Lane 1 Stepper DIR (Pin GP3)</xhtml>
+              </documentation>
+            </variable>
+
+            <!-- Lane 2 -->
+            <variable name="bMotor_L2_Step" address="%QX0.2">
+              <type><BOOL/></type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">Lane 2 Stepper STEP (Pin GP4)</xhtml>
+              </documentation>
+            </variable>
+            <variable name="bMotor_L2_Dir" address="%QX0.3">
+              <type><BOOL/></type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">Lane 2 Stepper DIR (Pin GP5)</xhtml>
+              </documentation>
+            </variable>
+
+            <!-- Lane 3 -->
+            <variable name="bMotor_L3_Step" address="%QX0.4">
+              <type><BOOL/></type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">Lane 3 Stepper STEP (Pin GP6)</xhtml>
+              </documentation>
+            </variable>
+            <variable name="bMotor_L3_Dir" address="%QX0.5">
+              <type><BOOL/></type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">Lane 3 Stepper DIR (Pin GP7)</xhtml>
+              </documentation>
+            </variable>
+
+            <!-- Lane 4 -->
+            <variable name="bMotor_L4_Step" address="%QX0.6">
+              <type><BOOL/></type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">Lane 4 Stepper STEP (Pin GP10)</xhtml>
+              </documentation>
+            </variable>
+            <variable name="bMotor_L4_Dir" address="%QX0.7">
+              <type><BOOL/></type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">Lane 4 Stepper DIR (Pin GP11)</xhtml>
+              </documentation>
+            </variable>
+
+            <!-- Shared Enable -->
+            <variable name="bMotor_Enable" address="%QX1.0">
+              <type><BOOL/></type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">Shared Stepper Enable (Active Low) (Pin GP12)</xhtml>
+              </documentation>
+            </variable>
+
+            <!-- ========================================== -->
+            <!-- ACTUATORS (Servo)                          -->
+            <!-- ========================================== -->
+            <variable name="wServo_PWM" address="%QW0">
+              <type><WORD/></type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">Cutter Servo PWM Duty Cycle (Pin GP20)</xhtml>
+              </documentation>
+            </variable>
+
+            <!-- ========================================== -->
+            <!-- EXPANSION (I2C / Aux)                      -->
+            <!-- ========================================== -->
+            <!-- I2C (SDA/SCL) - Represented as Byte for status or address -->
+            <variable name="bI2C_Status" address="%IB0">
+              <type><BYTE/></type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">I2C Bus Status (SDA=GP14, SCL=GP15)</xhtml>
+              </documentation>
+            </variable>
+
+            <!-- Aux/Display (UART) -->
+            <variable name="bAux_IO1" address="%QX2.0">
+              <type><BOOL/></type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">Aux IO 1 / UART TX (Pin GP21)</xhtml>
+              </documentation>
+            </variable>
+            <variable name="bAux_IO2" address="%QX2.1">
+              <type><BOOL/></type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">Aux IO 2 / UART RX (Pin GP22)</xhtml>
+              </documentation>
+            </variable>
+
+          </globalVars>
+        </resource>
+      </configuration>
+    </configurations>
+  </instances>
+</project>

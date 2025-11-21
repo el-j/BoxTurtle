@@ -5,6 +5,18 @@ BoxTurtle Automated Filament Control
 [![Join me on Discord](https://discord.com/api/guilds/1229586267671629945/widget.png?style=banner2)](https://discord.gg/eT8zc3bvPR)
 
 BoxTurtle is exactly what it appears to be — an open source AMS style filament changer for [Klipper](https://klipper3d.org) machines. 
+
+## 📚 Documentation & Build Guide
+**[👉 Click Here for the Full Build Guide & Documentation](https://el-j.github.io/BoxTurtle/docs/)**
+
+This documentation covers the **Custom Pico Shield v2** build, including:
+*   [Hardware Assembly](docs/hardware_assembly.md)
+*   [Electronics & Wiring](docs/hardware_assembly.md#part-2-electronics-pico-shield-v2)
+*   [Firmware Setup (Rust)](docs/firmware_setup.md)
+*   [Klipper Configuration](docs/configuration.md)
+
+---
+
 BoxTurtle requires the AFC-Klipper Add-On (found [here](https://github.com/ArmoredTurtle/AFC-Klipper-Add-On)).
 The goal of BoxTurtle is to deliver a user experience as close to an AMS as possible in vanilla Klipper. e.g. an "AMS" for any klipperized printer regardless of form factor but [VORON Design](https://vorondesign.com) printers in particular.
 

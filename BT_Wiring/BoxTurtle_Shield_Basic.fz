@@ -1,0 +1,213 @@
+<?xml version="1.0" ?>
+<module fritzingVersion="0.9.3b">
+    <instances>
+        <instance moduleIdRef="RectanglePCBModuleID" modelIndex="PCB1" path="RectanglePCBModuleID">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="0" y="0"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="Raspberry-Pi-Pico-v1" modelIndex="MCU1" path="Raspberry-Pi-Pico-v1.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="400" y="350"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="Pololu_A4988" modelIndex="Driver1" path="Pololu_A4988.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="150" y="250"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="Pololu_A4988" modelIndex="Driver2" path="Pololu_A4988.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="150" y="550"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="Pololu_A4988" modelIndex="Driver3" path="Pololu_A4988.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="650" y="250"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="Pololu_A4988" modelIndex="Driver4" path="Pololu_A4988.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="650" y="550"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="GenericFemaleHeader_4pin" modelIndex="NEMA14_L1" path="GenericFemaleHeader_4pin.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="50" y="250"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="GenericFemaleHeader_4pin" modelIndex="NEMA14_L2" path="GenericFemaleHeader_4pin.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="50" y="550"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="GenericFemaleHeader_4pin" modelIndex="NEMA14_L3" path="GenericFemaleHeader_4pin.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="850" y="250"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="GenericFemaleHeader_4pin" modelIndex="NEMA14_L4" path="GenericFemaleHeader_4pin.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="850" y="550"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="GenericFemaleHeader_3pin" modelIndex="Omron_L1" path="GenericFemaleHeader_3pin.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="200" y="800"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="GenericFemaleHeader_3pin" modelIndex="Omron_L2" path="GenericFemaleHeader_3pin.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="350" y="800"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="GenericFemaleHeader_3pin" modelIndex="Omron_L3" path="GenericFemaleHeader_3pin.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="500" y="800"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="GenericFemaleHeader_3pin" modelIndex="Omron_L4" path="GenericFemaleHeader_3pin.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="650" y="800"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="GenericFemaleHeader_3pin" modelIndex="Servo_Cutter" path="GenericFemaleHeader_3pin.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="800" y="800"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="ScrewTerminal_2pin" modelIndex="Term_Power" path="ScrewTerminal_2pin.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="50" y="50"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="Voltage_Regulator_Module" modelIndex="Buck1" path="Voltage_Regulator_Module.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="200" y="50"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="ElectrolyticCapacitor" modelIndex="Cap_D1" path="ElectrolyticCapacitor.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="150" y="200"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="ElectrolyticCapacitor" modelIndex="Cap_D2" path="ElectrolyticCapacitor.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="150" y="500"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="ElectrolyticCapacitor" modelIndex="Cap_D3" path="ElectrolyticCapacitor.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="650" y="200"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="ElectrolyticCapacitor" modelIndex="Cap_D4" path="ElectrolyticCapacitor.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="650" y="500"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="LED" modelIndex="LED_Pwr" path="LED.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="100" y="50"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="Resistor" modelIndex="R_LED" path="Resistor.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="120" y="50"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+    </instances>
+    <nets/>
+</module>
