@@ -6,6 +6,7 @@ on:
       - 'CAD/**'
       - 'STLs/**'
       - 'scripts/render_assets.py'
+      - '.github/workflows/render_assets.yml'
   workflow_dispatch:
 
 permissions:
