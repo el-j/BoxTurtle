@@ -22,10 +22,10 @@ jobs:
       - name: Install OpenSCAD
         run: |
           sudo apt-get update
-          sudo apt-get install -y openscad
+          sudo apt-get install -y openscad xvfb
 
       - name: Render 3D Assets
-        run: python3 scripts/render_assets.py
+        run: xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" python3 scripts/render_assets.py
 
       - name: Commit and Push Changes
         uses: stefanzweifel/git-auto-commit-action@v4
