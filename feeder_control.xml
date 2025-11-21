@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.plcopen.org/xml/tc6_0200">
+  <fileHeader companyName="BoxTurtle" productName="FilamentFeeder" productVersion="1.0" creationDateTime="2025-11-21T12:00:00"/>
+  <contentHeader name="BoxTurtle_Control" modificationDateTime="2025-11-21T12:00:00">
+    <coordinateInfo>
+      <fbd>
+        <scaling x="1" y="1"/>
+      </fbd>
+      <ld>
+        <scaling x="1" y="1"/>
+      </ld>
+      <sfc>
+        <scaling x="1" y="1"/>
+      </sfc>
+    </coordinateInfo>
+  </contentHeader>
+  <types>
+    <dataTypes>
+      <dataType name="E_FeederState">
+        <baseType>
+          <enum>
+            <values>
+              <value name="IDLE" value="0"/>
+              <value name="CUTTING" value="10"/>
+              <value name="UNLOADING" value="20"/>
+              <value name="LOADING" value="30"/>
+              <value name="ERROR" value="99"/>
+            </values>
+          </enum>
+        </baseType>
+      </dataType>
+    </dataTypes>
+    <pous>
+      <!-- Function Block: Cutter Control -->
+      <pou name="FB_Cutter" pouType="functionBlock">
+        <interface>
+          <inputVars>
+            <variable name="bExecute">
+              <type><BOOL/></type>
+            </variable>
+          </inputVars>
+          <outputVars>
+            <variable name="bDone">
+              <type><BOOL/></type>
+            </variable>
+            <variable name="bServoSignal">
+              <type><BOOL/></type>
+            </variable>
+          </outputVars>
+          <localVars>
+            <variable name="iStep">
+              <type><INT/></type>
+              <initialValue><simpleValue value="0"/></initialValue>
+            </variable>
+            <variable name="fbTimer">
+              <type><derived name="TON"/></type>
+            </variable>
+          </localVars>
+        </interface>
+        <body>
+          <ST>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml">
+              <![CDATA[
+CASE iStep OF
+  0: (* Idle *)
+    bDone := FALSE;
+    bServoSignal := FALSE;
+    IF bExecute THEN
+      iStep := 10;
+    END_IF;
+
+  10: (* Actuate Servo *)
+    bServoSignal := TRUE;
+    fbTimer(IN:=TRUE, PT:=T#500MS);
+    IF fbTimer.Q THEN
+      fbTimer(IN:=FALSE);
+      iStep := 20;
+    END_IF;
+
+  20: (* Retract Servo *)
+    bServoSignal := FALSE;
+    fbTimer(IN:=TRUE, PT:=T#500MS);
+    IF fbTimer.Q THEN
+      fbTimer(IN:=FALSE);
+      bDone := TRUE;
+      iStep := 30;
+    END_IF;
+
+  30: (* Wait for Reset *)
+    IF NOT bExecute THEN
+      bDone := FALSE;
+      iStep := 0;
+    END_IF;
+END_CASE;
+              ]]>
+            </xhtml>
+          </ST>
+        </body>
+      </pou>
+
+      <!-- Function Block: Single Lane Control -->
+      <pou name="FB_Lane" pouType="functionBlock">
+        <interface>
+          <inputVars>
+            <variable name="bLoad">
+              <type><BOOL/></type>
+            </variable>
+            <variable name="bUnload">
+              <type><BOOL/></type>
+            </variable>
+            <variable name="bFilamentSensor">
+              <type><BOOL/></type>
+            </variable>
+          </inputVars>
+          <outputVars>
+            <variable name="bMotorRun">
+              <type><BOOL/></type>
+            </variable>
+            <variable name="bMotorDir">
+              <type><BOOL/></type> <!-- TRUE = Load, FALSE = Unload -->
+            </variable>
+            <variable name="bBusy">
+              <type><BOOL/></type>
+            </variable>
+            <variable name="bDone">
+              <type><BOOL/></type>
+            </variable>
+          </outputVars>
+          <localVars>
+            <variable name="iState">
+              <type><INT/></type>
+            </variable>
+          </localVars>
+        </interface>
+        <body>
+          <ST>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml">
+              <![CDATA[
+CASE iState OF
+  0: (* Idle *)
+    bMotorRun := FALSE;
+    bBusy := FALSE;
+    bDone := FALSE;
+    IF bLoad THEN
+      iState := 10;
+    ELSIF bUnload THEN
+      iState := 20;
+    END_IF;
+
+  10: (* Loading *)
+    bBusy := TRUE;
+    bMotorDir := TRUE;
+    bMotorRun := TRUE;
+    (* Run until sensor sees filament *)
+    IF bFilamentSensor THEN
+      bMotorRun := FALSE;
+      bDone := TRUE;
+      iState := 30;
+    END_IF;
+
+  20: (* Unloading *)
+    bBusy := TRUE;
+    bMotorDir := FALSE;
+    bMotorRun := TRUE;
+    (* Run until sensor loses filament *)
+    IF NOT bFilamentSensor THEN
+      bMotorRun := FALSE;
+      bDone := TRUE;
+      iState := 30;
+    END_IF;
+
+  30: (* Wait for Command Clear *)
+    IF NOT bLoad AND NOT bUnload THEN
+      bDone := FALSE;
+      bBusy := FALSE;
+      iState := 0;
+    END_IF;
+END_CASE;
+              ]]>
+            </xhtml>
+          </ST>
+        </body>
+      </pou>
+
+      <!-- Main Program -->
+      <pou name="PRG_Main" pouType="program">
+        <interface>
+          <inputVars>
+            <variable name="iRequestedTool">
+              <type><INT/></type> <!-- 1-4 -->
+            </variable>
+            <variable name="bStartChange">
+              <type><BOOL/></type>
+            </variable>
+            <variable name="Inputs_Sensors">
+              <type><array><dimension lower="1" upper="4"/><baseType><BOOL/></baseType></array></type>
+            </variable>
+          </inputVars>
+          <outputVars>
+            <variable name="Outputs_MotorRun">
+              <type><array><dimension lower="1" upper="4"/><baseType><BOOL/></baseType></array></type>
+            </variable>
+            <variable name="Outputs_MotorDir">
+              <type><array><dimension lower="1" upper="4"/><baseType><BOOL/></baseType></array></type>
+            </variable>
+            <variable name="Output_CutterServo">
+              <type><BOOL/></type>
+            </variable>
+            <variable name="bSystemReady">
+              <type><BOOL/></type>
+            </variable>
+          </outputVars>
+          <localVars>
+            <variable name="eState">
+              <type><derived name="E_FeederState"/></type>
+              <initialValue><simpleValue value="IDLE"/></initialValue>
+            </variable>
+            <variable name="iCurrentTool">
+              <type><INT/></type>
+              <initialValue><simpleValue value="0"/></initialValue>
+            </variable>
+            <variable name="fbLanes">
+              <type><array><dimension lower="1" upper="4"/><baseType><derived name="FB_Lane"/></baseType></array></type>
+            </variable>
+            <variable name="fbCutter">
+              <type><derived name="FB_Cutter"/></type>
+            </variable>
+            <variable name="i">
+              <type><INT/></type>
+            </variable>
+          </localVars>
+        </interface>
+        <body>
+          <ST>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml">
+              <![CDATA[
+(* Main State Machine *)
+CASE eState OF
+  E_FeederState.IDLE:
+    bSystemReady := TRUE;
+    IF bStartChange AND (iRequestedTool <> iCurrentTool) THEN
+      bSystemReady := FALSE;
+      eState := E_FeederState.CUTTING;
+    END_IF;
+
+  E_FeederState.CUTTING:
+    (* Step 1: Cut the current filament if any is loaded *)
+    IF iCurrentTool > 0 THEN
+      fbCutter(bExecute := TRUE);
+      IF fbCutter.bDone THEN
+        fbCutter(bExecute := FALSE);
+        eState := E_FeederState.UNLOADING;
+      END_IF;
+    ELSE
+      (* No tool loaded, skip cut/unload *)
+      eState := E_FeederState.LOADING;
+    END_IF;
+
+  E_FeederState.UNLOADING:
+    (* Step 2: Unload the old tool *)
+    fbLanes[iCurrentTool](bUnload := TRUE, bFilamentSensor := Inputs_Sensors[iCurrentTool]);
+    
+    Outputs_MotorRun[iCurrentTool] := fbLanes[iCurrentTool].bMotorRun;
+    Outputs_MotorDir[iCurrentTool] := fbLanes[iCurrentTool].bMotorDir;
+
+    IF fbLanes[iCurrentTool].bDone THEN
+      fbLanes[iCurrentTool](bUnload := FALSE); (* Reset Lane *)
+      iCurrentTool := 0; (* Cleared *)
+      eState := E_FeederState.LOADING;
+    END_IF;
+
+  E_FeederState.LOADING:
+    (* Step 3: Load the new tool *)
+    fbLanes[iRequestedTool](bLoad := TRUE, bFilamentSensor := Inputs_Sensors[iRequestedTool]);
+
+    Outputs_MotorRun[iRequestedTool] := fbLanes[iRequestedTool].bMotorRun;
+    Outputs_MotorDir[iRequestedTool] := fbLanes[iRequestedTool].bMotorDir;
+
+    IF fbLanes[iRequestedTool].bDone THEN
+      fbLanes[iRequestedTool](bLoad := FALSE); (* Reset Lane *)
+      iCurrentTool := iRequestedTool;
+      eState := E_FeederState.IDLE;
+    END_IF;
+
+  E_FeederState.ERROR:
+    (* Error handling logic here *)
+    bSystemReady := FALSE;
+
+END_CASE;
+
+(* Map Cutter Output *)
+Output_CutterServo := fbCutter.bServoSignal;
+              ]]>
+            </xhtml>
+          </ST>
+        </body>
+      </pou>
+    </pous>
+  </types>
+  <instances>
+    <configurations>
+      <configuration name="Config0">
+        <resource name="Res0">
+          <task name="TaskMain" interval="T#10ms" priority="0">
+            <pouInstance name="InstMain" typeName="PRG_Main"/>
+          </task>
+        </resource>
+      </configuration>
+    </configurations>
+  </instances>
+</project>
