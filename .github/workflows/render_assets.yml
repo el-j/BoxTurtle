@@ -1,0 +1,35 @@
+name: Generate Documentation Assets
+
+on:
+  push:
+    paths:
+      - 'CAD/**'
+      - 'STLs/**'
+      - 'scripts/render_assets.py'
+      - '.github/workflows/render_assets.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  render-images:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install OpenSCAD
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y openscad xvfb
+
+      - name: Render 3D Assets
+        run: xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" python3 scripts/render_assets.py
+
+      - name: Commit and Push Changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "docs: Auto-generate 3D renders [skip ci]"
+          file_pattern: "docs/images/*.png"

@@ -1,0 +1,723 @@
+<?xml version="1.0" ?>
+<module fritzingVersion="0.9.3b">
+    <instances>
+        <instance moduleIdRef="RectanglePCBModuleID" modelIndex="PCB1" path="RectanglePCBModuleID">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="0" y="0"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="Raspberry-Pi-Pico-v1" modelIndex="MCU1" path="Raspberry-Pi-Pico-v1.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="400" y="350"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="Pololu_A4988" modelIndex="Driver1" path="Pololu_A4988.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="150" y="250"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="Pololu_A4988" modelIndex="Driver2" path="Pololu_A4988.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="150" y="550"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="Pololu_A4988" modelIndex="Driver3" path="Pololu_A4988.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="650" y="250"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="Pololu_A4988" modelIndex="Driver4" path="Pololu_A4988.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="650" y="550"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="GenericFemaleHeader_4pin" modelIndex="NEMA14_L1" path="GenericFemaleHeader_4pin.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="50" y="250"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="GenericFemaleHeader_4pin" modelIndex="NEMA14_L2" path="GenericFemaleHeader_4pin.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="50" y="550"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="GenericFemaleHeader_4pin" modelIndex="NEMA14_L3" path="GenericFemaleHeader_4pin.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="850" y="250"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="GenericFemaleHeader_4pin" modelIndex="NEMA14_L4" path="GenericFemaleHeader_4pin.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="850" y="550"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="GenericFemaleHeader_3pin" modelIndex="Omron_L1" path="GenericFemaleHeader_3pin.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="200" y="800"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="GenericFemaleHeader_3pin" modelIndex="Omron_L2" path="GenericFemaleHeader_3pin.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="350" y="800"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="GenericFemaleHeader_3pin" modelIndex="Omron_L3" path="GenericFemaleHeader_3pin.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="500" y="800"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="GenericFemaleHeader_3pin" modelIndex="Omron_L4" path="GenericFemaleHeader_3pin.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="650" y="800"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="GenericFemaleHeader_3pin" modelIndex="Servo_Cutter" path="GenericFemaleHeader_3pin.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="800" y="800"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="ScrewTerminal_2pin" modelIndex="Term_Power" path="ScrewTerminal_2pin.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="50" y="50"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="Voltage_Regulator_Module" modelIndex="Buck1" path="Voltage_Regulator_Module.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="200" y="50"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="GenericFemaleHeader_4pin" modelIndex="I2C_Exp" path="GenericFemaleHeader_4pin.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="450" y="50"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="GenericFemaleHeader_4pin" modelIndex="Aux_Disp" path="GenericFemaleHeader_4pin.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="700" y="50"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="ElectrolyticCapacitor" modelIndex="Cap_D1" path="ElectrolyticCapacitor.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="150" y="200"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="ElectrolyticCapacitor" modelIndex="Cap_D2" path="ElectrolyticCapacitor.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="150" y="500"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="ElectrolyticCapacitor" modelIndex="Cap_D3" path="ElectrolyticCapacitor.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="650" y="200"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="ElectrolyticCapacitor" modelIndex="Cap_D4" path="ElectrolyticCapacitor.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="650" y="500"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="Resistor" modelIndex="R_SDA" path="Resistor.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="450" y="100"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="Resistor" modelIndex="R_SCL" path="Resistor.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="480" y="100"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="LED" modelIndex="LED_Pwr" path="LED.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="100" y="50"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+        <instance moduleIdRef="Resistor" modelIndex="R_LED" path="Resistor.fzp">
+            <views>
+                <pcbView layer="copper1">
+                    <geometry z="5.5" x="120" y="50"/>
+                </pcbView>
+                <schematicView layer="schematic"/>
+                <breadboardView layer="breadboard"/>
+            </views>
+        </instance>
+    </instances>
+    <nets>
+        <net connectorId="net0" name="24V">
+            <connector id="connector1" name="connector1">
+                <partRef modelIndex="Term_Power"/>
+            </connector>
+            <connector id="connector0" name="connector0">
+                <partRef modelIndex="Buck1"/>
+            </connector>
+            <connector id="connector15" name="connector15">
+                <partRef modelIndex="Driver1"/>
+            </connector>
+            <connector id="connector1" name="connector1">
+                <partRef modelIndex="Cap_D1"/>
+            </connector>
+            <connector id="connector15" name="connector15">
+                <partRef modelIndex="Driver2"/>
+            </connector>
+            <connector id="connector1" name="connector1">
+                <partRef modelIndex="Cap_D2"/>
+            </connector>
+            <connector id="connector15" name="connector15">
+                <partRef modelIndex="Driver3"/>
+            </connector>
+            <connector id="connector1" name="connector1">
+                <partRef modelIndex="Cap_D3"/>
+            </connector>
+            <connector id="connector15" name="connector15">
+                <partRef modelIndex="Driver4"/>
+            </connector>
+            <connector id="connector1" name="connector1">
+                <partRef modelIndex="Cap_D4"/>
+            </connector>
+        </net>
+        <net connectorId="net1" name="GND">
+            <connector id="connector0" name="connector0">
+                <partRef modelIndex="Term_Power"/>
+            </connector>
+            <connector id="connector1" name="connector1">
+                <partRef modelIndex="Buck1"/>
+            </connector>
+            <connector id="connector2" name="connector2">
+                <partRef modelIndex="MCU1"/>
+            </connector>
+            <connector id="connector0" name="connector0">
+                <partRef modelIndex="Servo_Cutter"/>
+            </connector>
+            <connector id="connector1" name="connector1">
+                <partRef modelIndex="I2C_Exp"/>
+            </connector>
+            <connector id="connector1" name="connector1">
+                <partRef modelIndex="Aux_Disp"/>
+            </connector>
+            <connector id="connector0" name="connector0">
+                <partRef modelIndex="LED_Pwr"/>
+            </connector>
+            <connector id="connector14" name="connector14">
+                <partRef modelIndex="Driver1"/>
+            </connector>
+            <connector id="connector8" name="connector8">
+                <partRef modelIndex="Driver1"/>
+            </connector>
+            <connector id="connector0" name="connector0">
+                <partRef modelIndex="Omron_L1"/>
+            </connector>
+            <connector id="connector0" name="connector0">
+                <partRef modelIndex="Cap_D1"/>
+            </connector>
+            <connector id="connector14" name="connector14">
+                <partRef modelIndex="Driver2"/>
+            </connector>
+            <connector id="connector8" name="connector8">
+                <partRef modelIndex="Driver2"/>
+            </connector>
+            <connector id="connector0" name="connector0">
+                <partRef modelIndex="Omron_L2"/>
+            </connector>
+            <connector id="connector0" name="connector0">
+                <partRef modelIndex="Cap_D2"/>
+            </connector>
+            <connector id="connector14" name="connector14">
+                <partRef modelIndex="Driver3"/>
+            </connector>
+            <connector id="connector8" name="connector8">
+                <partRef modelIndex="Driver3"/>
+            </connector>
+            <connector id="connector0" name="connector0">
+                <partRef modelIndex="Omron_L3"/>
+            </connector>
+            <connector id="connector0" name="connector0">
+                <partRef modelIndex="Cap_D3"/>
+            </connector>
+            <connector id="connector14" name="connector14">
+                <partRef modelIndex="Driver4"/>
+            </connector>
+            <connector id="connector8" name="connector8">
+                <partRef modelIndex="Driver4"/>
+            </connector>
+            <connector id="connector0" name="connector0">
+                <partRef modelIndex="Omron_L4"/>
+            </connector>
+            <connector id="connector0" name="connector0">
+                <partRef modelIndex="Cap_D4"/>
+            </connector>
+        </net>
+        <net connectorId="net2" name="5V">
+            <connector id="connector2" name="connector2">
+                <partRef modelIndex="Buck1"/>
+            </connector>
+            <connector id="connector38" name="connector38">
+                <partRef modelIndex="MCU1"/>
+            </connector>
+            <connector id="connector1" name="connector1">
+                <partRef modelIndex="Servo_Cutter"/>
+            </connector>
+            <connector id="connector0" name="connector0">
+                <partRef modelIndex="Aux_Disp"/>
+            </connector>
+            <connector id="connector0" name="connector0">
+                <partRef modelIndex="R_LED"/>
+            </connector>
+        </net>
+        <net connectorId="net3" name="LED_Anode">
+            <connector id="connector1" name="connector1">
+                <partRef modelIndex="R_LED"/>
+            </connector>
+            <connector id="connector1" name="connector1">
+                <partRef modelIndex="LED_Pwr"/>
+            </connector>
+        </net>
+        <net connectorId="net4" name="3V3">
+            <connector id="connector35" name="connector35">
+                <partRef modelIndex="MCU1"/>
+            </connector>
+            <connector id="connector0" name="connector0">
+                <partRef modelIndex="I2C_Exp"/>
+            </connector>
+            <connector id="connector0" name="connector0">
+                <partRef modelIndex="R_SDA"/>
+            </connector>
+            <connector id="connector0" name="connector0">
+                <partRef modelIndex="R_SCL"/>
+            </connector>
+            <connector id="connector9" name="connector9">
+                <partRef modelIndex="Driver1"/>
+            </connector>
+            <connector id="connector1" name="connector1">
+                <partRef modelIndex="Omron_L1"/>
+            </connector>
+            <connector id="connector9" name="connector9">
+                <partRef modelIndex="Driver2"/>
+            </connector>
+            <connector id="connector1" name="connector1">
+                <partRef modelIndex="Omron_L2"/>
+            </connector>
+            <connector id="connector9" name="connector9">
+                <partRef modelIndex="Driver3"/>
+            </connector>
+            <connector id="connector1" name="connector1">
+                <partRef modelIndex="Omron_L3"/>
+            </connector>
+            <connector id="connector9" name="connector9">
+                <partRef modelIndex="Driver4"/>
+            </connector>
+            <connector id="connector1" name="connector1">
+                <partRef modelIndex="Omron_L4"/>
+            </connector>
+        </net>
+        <net connectorId="net5" name="L1_STEP">
+            <connector id="connector3" name="connector3">
+                <partRef modelIndex="MCU1"/>
+            </connector>
+            <connector id="connector6" name="connector6">
+                <partRef modelIndex="Driver1"/>
+            </connector>
+        </net>
+        <net connectorId="net6" name="L1_DIR">
+            <connector id="connector4" name="connector4">
+                <partRef modelIndex="MCU1"/>
+            </connector>
+            <connector id="connector7" name="connector7">
+                <partRef modelIndex="Driver1"/>
+            </connector>
+        </net>
+        <net connectorId="net7" name="L1_UART">
+            <connector id="connector0" name="connector0">
+                <partRef modelIndex="MCU1"/>
+            </connector>
+        </net>
+        <net connectorId="net8" name="L1_A">
+            <connector id="connector11" name="connector11">
+                <partRef modelIndex="Driver1"/>
+            </connector>
+            <connector id="connector0" name="connector0">
+                <partRef modelIndex="NEMA14_L1"/>
+            </connector>
+        </net>
+        <net connectorId="net9" name="L1_B">
+            <connector id="connector10" name="connector10">
+                <partRef modelIndex="Driver1"/>
+            </connector>
+            <connector id="connector1" name="connector1">
+                <partRef modelIndex="NEMA14_L1"/>
+            </connector>
+        </net>
+        <net connectorId="net10" name="L1_C">
+            <connector id="connector12" name="connector12">
+                <partRef modelIndex="Driver1"/>
+            </connector>
+            <connector id="connector2" name="connector2">
+                <partRef modelIndex="NEMA14_L1"/>
+            </connector>
+        </net>
+        <net connectorId="net11" name="L1_D">
+            <connector id="connector13" name="connector13">
+                <partRef modelIndex="Driver1"/>
+            </connector>
+            <connector id="connector3" name="connector3">
+                <partRef modelIndex="NEMA14_L1"/>
+            </connector>
+        </net>
+        <net connectorId="net12" name="L2_STEP">
+            <connector id="connector5" name="connector5">
+                <partRef modelIndex="MCU1"/>
+            </connector>
+            <connector id="connector6" name="connector6">
+                <partRef modelIndex="Driver2"/>
+            </connector>
+        </net>
+        <net connectorId="net13" name="L2_DIR">
+            <connector id="connector6" name="connector6">
+                <partRef modelIndex="MCU1"/>
+            </connector>
+            <connector id="connector7" name="connector7">
+                <partRef modelIndex="Driver2"/>
+            </connector>
+        </net>
+        <net connectorId="net14" name="L2_UART">
+            <connector id="connector1" name="connector1">
+                <partRef modelIndex="MCU1"/>
+            </connector>
+        </net>
+        <net connectorId="net15" name="L2_A">
+            <connector id="connector11" name="connector11">
+                <partRef modelIndex="Driver2"/>
+            </connector>
+            <connector id="connector0" name="connector0">
+                <partRef modelIndex="NEMA14_L2"/>
+            </connector>
+        </net>
+        <net connectorId="net16" name="L2_B">
+            <connector id="connector10" name="connector10">
+                <partRef modelIndex="Driver2"/>
+            </connector>
+            <connector id="connector1" name="connector1">
+                <partRef modelIndex="NEMA14_L2"/>
+            </connector>
+        </net>
+        <net connectorId="net17" name="L2_C">
+            <connector id="connector12" name="connector12">
+                <partRef modelIndex="Driver2"/>
+            </connector>
+            <connector id="connector2" name="connector2">
+                <partRef modelIndex="NEMA14_L2"/>
+            </connector>
+        </net>
+        <net connectorId="net18" name="L2_D">
+            <connector id="connector13" name="connector13">
+                <partRef modelIndex="Driver2"/>
+            </connector>
+            <connector id="connector3" name="connector3">
+                <partRef modelIndex="NEMA14_L2"/>
+            </connector>
+        </net>
+        <net connectorId="net19" name="L3_STEP">
+            <connector id="connector8" name="connector8">
+                <partRef modelIndex="MCU1"/>
+            </connector>
+            <connector id="connector6" name="connector6">
+                <partRef modelIndex="Driver3"/>
+            </connector>
+        </net>
+        <net connectorId="net20" name="L3_DIR">
+            <connector id="connector9" name="connector9">
+                <partRef modelIndex="MCU1"/>
+            </connector>
+            <connector id="connector7" name="connector7">
+                <partRef modelIndex="Driver3"/>
+            </connector>
+        </net>
+        <net connectorId="net21" name="L3_UART">
+            <connector id="connector10" name="connector10">
+                <partRef modelIndex="MCU1"/>
+            </connector>
+        </net>
+        <net connectorId="net22" name="L3_A">
+            <connector id="connector11" name="connector11">
+                <partRef modelIndex="Driver3"/>
+            </connector>
+            <connector id="connector0" name="connector0">
+                <partRef modelIndex="NEMA14_L3"/>
+            </connector>
+        </net>
+        <net connectorId="net23" name="L3_B">
+            <connector id="connector10" name="connector10">
+                <partRef modelIndex="Driver3"/>
+            </connector>
+            <connector id="connector1" name="connector1">
+                <partRef modelIndex="NEMA14_L3"/>
+            </connector>
+        </net>
+        <net connectorId="net24" name="L3_C">
+            <connector id="connector12" name="connector12">
+                <partRef modelIndex="Driver3"/>
+            </connector>
+            <connector id="connector2" name="connector2">
+                <partRef modelIndex="NEMA14_L3"/>
+            </connector>
+        </net>
+        <net connectorId="net25" name="L3_D">
+            <connector id="connector13" name="connector13">
+                <partRef modelIndex="Driver3"/>
+            </connector>
+            <connector id="connector3" name="connector3">
+                <partRef modelIndex="NEMA14_L3"/>
+            </connector>
+        </net>
+        <net connectorId="net26" name="L4_STEP">
+            <connector id="connector13" name="connector13">
+                <partRef modelIndex="MCU1"/>
+            </connector>
+            <connector id="connector6" name="connector6">
+                <partRef modelIndex="Driver4"/>
+            </connector>
+        </net>
+        <net connectorId="net27" name="L4_DIR">
+            <connector id="connector14" name="connector14">
+                <partRef modelIndex="MCU1"/>
+            </connector>
+            <connector id="connector7" name="connector7">
+                <partRef modelIndex="Driver4"/>
+            </connector>
+        </net>
+        <net connectorId="net28" name="L4_UART">
+            <connector id="connector11" name="connector11">
+                <partRef modelIndex="MCU1"/>
+            </connector>
+        </net>
+        <net connectorId="net29" name="L4_A">
+            <connector id="connector11" name="connector11">
+                <partRef modelIndex="Driver4"/>
+            </connector>
+            <connector id="connector0" name="connector0">
+                <partRef modelIndex="NEMA14_L4"/>
+            </connector>
+        </net>
+        <net connectorId="net30" name="L4_B">
+            <connector id="connector10" name="connector10">
+                <partRef modelIndex="Driver4"/>
+            </connector>
+            <connector id="connector1" name="connector1">
+                <partRef modelIndex="NEMA14_L4"/>
+            </connector>
+        </net>
+        <net connectorId="net31" name="L4_C">
+            <connector id="connector12" name="connector12">
+                <partRef modelIndex="Driver4"/>
+            </connector>
+            <connector id="connector2" name="connector2">
+                <partRef modelIndex="NEMA14_L4"/>
+            </connector>
+        </net>
+        <net connectorId="net32" name="L4_D">
+            <connector id="connector13" name="connector13">
+                <partRef modelIndex="Driver4"/>
+            </connector>
+            <connector id="connector3" name="connector3">
+                <partRef modelIndex="NEMA14_L4"/>
+            </connector>
+        </net>
+        <net connectorId="net33" name="S1_Sig">
+            <connector id="connector2" name="connector2">
+                <partRef modelIndex="Omron_L1"/>
+            </connector>
+            <connector id="connector20" name="connector20">
+                <partRef modelIndex="MCU1"/>
+            </connector>
+        </net>
+        <net connectorId="net34" name="S2_Sig">
+            <connector id="connector2" name="connector2">
+                <partRef modelIndex="Omron_L2"/>
+            </connector>
+            <connector id="connector21" name="connector21">
+                <partRef modelIndex="MCU1"/>
+            </connector>
+        </net>
+        <net connectorId="net35" name="S3_Sig">
+            <connector id="connector2" name="connector2">
+                <partRef modelIndex="Omron_L3"/>
+            </connector>
+            <connector id="connector23" name="connector23">
+                <partRef modelIndex="MCU1"/>
+            </connector>
+        </net>
+        <net connectorId="net36" name="S4_Sig">
+            <connector id="connector2" name="connector2">
+                <partRef modelIndex="Omron_L4"/>
+            </connector>
+            <connector id="connector24" name="connector24">
+                <partRef modelIndex="MCU1"/>
+            </connector>
+        </net>
+        <net connectorId="net37" name="Servo_PWM">
+            <connector id="connector2" name="connector2">
+                <partRef modelIndex="Servo_Cutter"/>
+            </connector>
+            <connector id="connector25" name="connector25">
+                <partRef modelIndex="MCU1"/>
+            </connector>
+        </net>
+        <net connectorId="net38" name="ENABLE">
+            <connector id="connector15" name="connector15">
+                <partRef modelIndex="MCU1"/>
+            </connector>
+            <connector id="connector0" name="connector0">
+                <partRef modelIndex="Driver1"/>
+            </connector>
+            <connector id="connector0" name="connector0">
+                <partRef modelIndex="Driver2"/>
+            </connector>
+            <connector id="connector0" name="connector0">
+                <partRef modelIndex="Driver3"/>
+            </connector>
+            <connector id="connector0" name="connector0">
+                <partRef modelIndex="Driver4"/>
+            </connector>
+        </net>
+        <net connectorId="net39" name="I2C_SDA">
+            <connector id="connector18" name="connector18">
+                <partRef modelIndex="MCU1"/>
+            </connector>
+            <connector id="connector2" name="connector2">
+                <partRef modelIndex="I2C_Exp"/>
+            </connector>
+            <connector id="connector1" name="connector1">
+                <partRef modelIndex="R_SDA"/>
+            </connector>
+        </net>
+        <net connectorId="net40" name="I2C_SCL">
+            <connector id="connector19" name="connector19">
+                <partRef modelIndex="MCU1"/>
+            </connector>
+            <connector id="connector3" name="connector3">
+                <partRef modelIndex="I2C_Exp"/>
+            </connector>
+            <connector id="connector1" name="connector1">
+                <partRef modelIndex="R_SCL"/>
+            </connector>
+        </net>
+        <net connectorId="net41" name="AUX_1">
+            <connector id="connector26" name="connector26">
+                <partRef modelIndex="MCU1"/>
+            </connector>
+            <connector id="connector2" name="connector2">
+                <partRef modelIndex="Aux_Disp"/>
+            </connector>
+        </net>
+        <net connectorId="net42" name="AUX_2">
+            <connector id="connector28" name="connector28">
+                <partRef modelIndex="MCU1"/>
+            </connector>
+            <connector id="connector3" name="connector3">
+                <partRef modelIndex="Aux_Disp"/>
+            </connector>
+        </net>
+    </nets>
+</module>
